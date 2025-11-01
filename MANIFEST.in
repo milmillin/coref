@@ -1,0 +1,14 @@
+# Include important documentation and license files
+include README.md
+include LICENSE
+include requirements.txt
+include 3d_compat.md
+
+# Exclude unnecessary files from distribution
+exclude .gitignore
+recursive-exclude configs *
+recursive-exclude scripts *
+recursive-exclude assets *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store

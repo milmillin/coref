@@ -8,6 +8,51 @@ For training models for the VSIC challenge on the 3DCoMPaT dataset, please refer
 
 ## Installation
 
+### Option 1: Pip Installation (Recommended)
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/BardOfCodes/coref.git
+cd coref
+```
+
+2. Install the package with pip:
+
+```bash
+# For development (editable install)
+pip install -e .
+
+# Or for regular installation
+pip install .
+```
+
+This will automatically install all core dependencies listed in `requirements.txt`.
+
+3. Next there are some custom tools which are integrated into this repository. Running the following commands will install them in an `externals` folder.
+
+```bash
+mkdir externals
+cd externals
+# ProcXD
+git clone git@github.com:BardOfCodes/procXD.git
+cd procXD
+python setup.py install --user
+cd ..
+# Wacky
+git clone git@github.com:BardOfCodes/wacky.git
+cd wacky
+python setup.py install --user
+cd ..
+# GeoLIPI
+git clone git@github.com:BardOfCodes/geolipi.git
+cd geolipi
+export PYTHONPATH="$PYTHONPATH:$(pwd)"
+cd ../..
+```
+
+### Option 2: Conda Installation
+
 1. Running the following commands will create a conda environment named `coref` with the necessary packages. The packages and their versions are also listed in `requirements.txt` for alternate installation methods.
 
 ```bash
@@ -21,9 +66,10 @@ conda install conda-forge::networkx==3.2
 conda install conda-forge::opencv==4.7.0
 conda install pytorch==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 conda install -c pytorch -c nvidia faiss-gpu=1.7.2
+conda install einops
 ```
 
-2. Next there are some of my tools which are intergrated into this repository. Running the following commands will install them in a `external` folder.
+2. Next there are some custom tools which are integrated into this repository. Running the following commands will install them in an `externals` folder.
 
 ```bash
 mkdir externals

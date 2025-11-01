@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coref"
+version = "0.1.0"
+description = "CoReF: Code Rewriting Families for improving unsupervised visual program inference"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Aditya Ganeshan"}
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy==1.23.5",
+    "scipy==1.10.1",
+    "sympy==1.12",
+    "h5py==3.8.0",
+    "wandb==0.15.7",
+    "networkx==3.2",
+    "opencv-python==4.7.0.72",
+    "torch==2.1.0",
+    "faiss-cpu==1.7.2",
+    "einops>=0.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/BardOfCodes/coref"
+Repository = "https://github.com/BardOfCodes/coref"
+
+[tool.setuptools]
+packages = ["coref", "coref.dataloader", "coref.language", "coref.language.primal", "coref.language.macro", "coref.model", "coref.rewriter", "coref.trainer", "coref.utils"]
+
+[tool.setuptools.package-data]
+coref = ["py.typed"]
